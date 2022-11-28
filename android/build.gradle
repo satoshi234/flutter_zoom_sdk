@@ -20,8 +20,8 @@ rootProject.allprojects {
         mavenCentral()
 
         flatDir {
-//            dirs project(':flutter_zoom_sdk').file('libs')
-            dirs "${rootProject.projectDir}/libs"
+            dirs project(':flutter_zoom_sdk').file('libs')
+//            dirs "${rootProject.projectDir}/libs"
         }
     }
 }
