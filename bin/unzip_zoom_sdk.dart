@@ -3,16 +3,15 @@ import 'dart:core';
 import 'dart:io';
 
 // iOS Uri
-const iosSDKUri =
-    'https://firebasestorage.googleapis.com/v0/b/flutterzoomsdk.appspot.com/o/zoomSdk%2FiOS%2Fzoom-sdk-ios-5.12.8.5463%2Fios-arm64%2FMobileRTC?alt=media&token=199bb3c4-f9af-4b3f-8802-98caacf7099c';
+const iosSDKUri = 'https://www.dropbox.com/s/8yb0q40rfuag1me/MobileRTC?dl=1';
 const iosSimulateSDKUri =
-    'https://firebasestorage.googleapis.com/v0/b/flutterzoomsdk.appspot.com/o/zoomSdk%2FiOS%2Fzoom-sdk-ios-5.12.8.5463%2Fios-x86_64-simulator%2FMobileRTC?alt=media&token=b4acc054-41fa-4b8d-8fdf-ec8fb35d3925';
+    'https://www.dropbox.com/s/pz7bk305nhv45au/MobileRTC?dl=1';
 
 // Android Uri
 const androidCommonLibUri =
-    'https://firebasestorage.googleapis.com/v0/b/flutterzoomsdk.appspot.com/o/zoomSdk%2FAndroid%2Fzoom-sdk-android-5.12.8.9901%2Fcommonlib.aar?alt=media&token=9fc52737-b1d3-44aa-bec3-27d750133709';
+    'https://www.dropbox.com/s/1rup8ci2bv10773/commonlib.aar?dl=1';
 const androidMobileRtcUri =
-    'https://firebasestorage.googleapis.com/v0/b/flutterzoomsdk.appspot.com/o/zoomSdk%2FAndroid%2Fzoom-sdk-android-5.12.8.9901%2Fmobilertc.aar?alt=media&token=a9089eb9-5017-4af6-85f0-8f22c1ecb24a';
+    'https://www.dropbox.com/s/krl9ck0zwzqj824/mobilertc.aar?dl=1';
 
 void main(List<String> args) async {
   var location = Platform.script.toString();
@@ -90,4 +89,7 @@ Future<void> downloadFile(Uri uri, String savePath) async {
   final request = await HttpClient().getUrl(uri);
   final response = await request.close();
   await response.pipe(destinationFile.openWrite());
+
+  final size = File(savePath).lengthSync();
+  print('file size: $size');
 }
