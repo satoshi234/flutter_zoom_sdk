@@ -3,15 +3,15 @@ import 'dart:core';
 import 'dart:io';
 
 // iOS Uri
-const iosSDKUri = 'https://www.dropbox.com/s/8yb0q40rfuag1me/MobileRTC?dl=0';
+const iosSDKUri = 'https://www.dropbox.com/s/8yb0q40rfuag1me/MobileRTC?dl=1';
 const iosSimulateSDKUri =
-    'https://www.dropbox.com/s/pz7bk305nhv45au/MobileRTC?dl=0';
+    'https://www.dropbox.com/s/pz7bk305nhv45au/MobileRTC?dl=1';
 
 // Android Uri
 const androidCommonLibUri =
-    'https://www.dropbox.com/s/1rup8ci2bv10773/commonlib.aar?dl=0';
+    'https://www.dropbox.com/s/1rup8ci2bv10773/commonlib.aar?dl=1';
 const androidMobileRtcUri =
-    'https://www.dropbox.com/s/krl9ck0zwzqj824/mobilertc.aar?dl=0';
+    'https://www.dropbox.com/s/krl9ck0zwzqj824/mobilertc.aar?dl=1';
 
 void main(List<String> args) async {
   var location = Platform.script.toString();
