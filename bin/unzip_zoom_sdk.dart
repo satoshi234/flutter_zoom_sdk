@@ -2,16 +2,15 @@ import 'dart:convert';
 import 'dart:core';
 import 'dart:io';
 
-// iOS Uri
-const iosSDKUri = 'https://www.dropbox.com/s/8yb0q40rfuag1me/MobileRTC?dl=1';
+// iOS Uri * zoom-sdk-ios-5.17.6.13115
+const iosSDKUri =
+    'https://www.dropbox.com/scl/fi/hwbozkrkelsafu0wnp2v8/MobileRTC?rlkey=oaxjme2fg95b8d74hynx4l1ly&dl=1';
 const iosSimulateSDKUri =
-    'https://www.dropbox.com/s/pz7bk305nhv45au/MobileRTC?dl=1';
+    'https://www.dropbox.com/scl/fi/e3uq9qfr4up18iudch9ba/MobileRTC?rlkey=yx6wicw7vk44bj2z7jfuko98u&dl=1';
 
-// Android Uri
-const androidCommonLibUri =
-    'https://www.dropbox.com/s/1rup8ci2bv10773/commonlib.aar?dl=1';
+// Android Uri * zoom-sdk-android-5.17.6.19119
 const androidMobileRtcUri =
-    'https://www.dropbox.com/s/krl9ck0zwzqj824/mobilertc.aar?dl=1';
+    'https://www.dropbox.com/scl/fi/8mrh854g59x3dvssn33hl/mobilertc.aar?rlkey=f4tkfn32sl70im6jmazer76zx&dl=1';
 
 void main(List<String> args) async {
   var location = Platform.script.toString();
@@ -70,11 +69,6 @@ Future<void> checkAndDownloadSDK(String location) async {
     await downloadFile(Uri.parse(iosSimulateSDKUri), iosSimulateSDKFile);
   }
 
-  var androidCommonLibFile = location + '/android/libs/commonlib.aar';
-  exists = await File(androidCommonLibFile).exists();
-  if (!exists) {
-    await downloadFile(Uri.parse(androidCommonLibUri), androidCommonLibFile);
-  }
   var androidRTCLibFile = location + '/android/libs/mobilertc.aar';
   exists = await File(androidRTCLibFile).exists();
   if (!exists) {
